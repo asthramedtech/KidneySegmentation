@@ -42,8 +42,15 @@ This project implements an advanced medical image segmentation system for identi
 !pip install matplotlib
 !pip install pandas
 ```
+### Installation
+### Option 1: Kaggle Notebook
 
-## Local setup Installation
+#### Step 1: Create New Notebook
+1. Go to [Kaggle](https://www.kaggle.com)
+2. Click **"Create"** → **"New Notebook"**
+3. Enable GPU: Settings → Accelerator → **"GPU T4 x2"** (or available GPU)
+
+## option2: Local setup Installation
 
 1. Clone the repository:
 ```bash
@@ -63,6 +70,7 @@ pip install torch torchvision opencv-python albumentations numpy scikit-learn ma
 ```
 
 ## Dataset
+
 
 ### Download Dataset
 
@@ -86,7 +94,21 @@ project_root/
 │       ├── image_002.png
 │       └── ...
 ```
+#### Step 1: how to Upload Dataset to Kaggle
+1. Go to [Kaggle](https://www.kaggle.com)
+2. Navigate to the **Datasets** section
+3. Click **Your Work** → **Create New Dataset**
+4. Upload the downloaded `.zip` file
+5. Fill in the required dataset details
+6. Click **Create**
 
+#### Step 2: Add Dataset to Your Kaggle Notebook
+1. Open your Kaggle **Notebook**
+2. On the right-hand side, locate the **Input** section
+3. Click **Add Input**
+4. Select **Your Work**
+5. Find the uploaded dataset and click **Add**
+   
 ### Dataset Format
 
 - **Images**: Grayscale PNG format
