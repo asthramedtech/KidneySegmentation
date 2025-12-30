@@ -160,6 +160,22 @@ LEARNING_RATE = 1e-3    # Initial learning rate
 NUM_EPOCHS = 150        # Maximum epochs
 PATIENCE = 20           # Early stopping patience
 ```
+## Hyperparameter Choices and Reasoning
+
+**IMAGE_SIZE = 256**  
+A resolution of 256×256 strikes a balance between retaining sufficient spatial detail and keeping GPU memory usage and computation time manageable. It allows the model to learn meaningful features without overloading hardware.
+
+**BATCH_SIZE = 16**  
+This moderate batch size fits comfortably in most GPUs while maintaining stable gradient updates. Smaller batches also introduce a slight noise in the gradients, which can improve generalization.
+
+**LEARNING_RATE = 1e-3**  
+A standard starting point for optimizers like Adam or AdamW. This value ensures fast initial convergence while avoiding unstable training dynamics.
+
+**NUM_EPOCHS = 150**  
+Provides enough iterations for the model to learn complex patterns, particularly in deep architectures or when using smaller datasets. Early stopping mechanisms are applied to prevent overfitting.
+
+**PATIENCE = 20**  
+Allows training to continue through temporary validation plateaus, preventing premature termination while still avoiding unnecessary over-training.
 
 ### Running Training
 
