@@ -43,7 +43,7 @@ This project implements an advanced medical image segmentation system for identi
 !pip install pandas
 ```
 
-## Installation
+## Local setup Installation
 
 1. Clone the repository:
 ```bash
