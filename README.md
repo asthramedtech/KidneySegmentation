@@ -277,6 +277,85 @@ The code includes utilities for:
 - Unsharp masking
 (Currently not applied in main pipeline but available for experimentation)
 
+## Testing / Inference
+
+This section describes how to test the trained kidney segmentation model using the saved checkpoint. The model supports both single image testing and batch image inference.
+
+---
+
+### Prerequisites
+
+Make sure the trained model file is available:
+
+best_kidney_segmentation_model.pth
+
+
+
+
+### Model Loading
+
+The trained model is loaded from the saved checkpoint and moved to CPU or GPU automatically.
+
+model = load_model("/kaggle/working/best_kidney_segmentation_model.pth")
+
+pgsql
+Copy code
+
+---
+
+### Single Image Testing
+
+Use the following function to perform inference on a single image.
+
+predict_single_image(
+model,
+image_path="path/to/test_image.png"
+)
+
+yaml
+
+
+Output:
+- Original grayscale image
+- Predicted probability map
+- Binary segmentation mask (threshold = 0.5)
+
+---
+
+### Batch Image Testing
+
+To run inference on multiple images stored in a directory:
+
+predict_batch(
+model,
+image_dir="path/to/test_images/",
+output_dir="path/to/save_predicted_masks/"
+)
+
+yaml
+Copy code
+
+Output:
+- Binary segmentation masks saved as PNG files
+- One output mask per input image
+- Pixel values: 0 (background), 255 (kidney)
+
+---
+
+### Inference Configuration
+
+| Parameter | Value |
+|---------|------|
+| Image Size | 256 x 256 |
+| Input Channels | 1 (Grayscale) |
+| Model Architecture | Enhanced U-Net with Spatial Attention |
+| Output Type | Binary Mask |
+| Threshold | 0.5 |
+
+---
+
+
+
 ## Usage Tips
 
 1. **GPU Recommendation**: Training on GPU is highly recommended (10-20x faster)
