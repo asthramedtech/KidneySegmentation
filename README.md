@@ -33,15 +33,14 @@ This project implements an advanced medical image segmentation system for identi
 ## Requirements
 
 ```
-Python 3.8+
-torch>=1.9.0
-torchvision>=0.10.0
-opencv-python>=4.5.0
-albumentations>=1.0.0
-numpy>=1.19.0
-scikit-learn>=0.24.0
-matplotlib>=3.3.0
-pandas>=1.2.0
+!pip install torch
+!pip install torchvision
+!pip install opencv-python
+!pip install albumentations
+!pip install numpy
+!pip install scikit-learn
+!pip install matplotlib
+!pip install pandas
 ```
 
 ## Installation
