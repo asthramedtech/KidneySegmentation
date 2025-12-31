@@ -341,58 +341,8 @@ results = evaluator.process_batch(image_paths, output_dir)
 - Outputs saved to `/kaggle/working/`
 - GPU available in sessions with GPU enabled
 
-### Google Colab
-- Mount Google Drive for model access
-- Install packages in first cell
-- Use `/content/` for temporary storage
 
-### Local Machine
-- Ensure CUDA drivers installed for GPU
-- Use relative or absolute paths
-- Check write permissions for output directory
 
----
-
-## Expected Runtime
-
-### Per Image (GPU)
-- Loading model: 2-5 seconds (one time)
-- Single inference: 0.01-0.1 seconds
-- Visualization: 0.5-1 second
-
-### Per Image (CPU)
-- Loading model: 5-10 seconds (one time)
-- Single inference: 0.5-2 seconds
-- Visualization: 0.5-1 second
-
-### Batch (100 images, GPU)
-- Total time: ~2-3 minutes
-- Average per image: 1-2 seconds (including visualization)
-
----
-
-## Next Steps
-
-After successful inference:
-1. Review confidence scores
-2. Manually verify predictions on sample images
-3. Compare with ground truth if available
-4. Calculate metrics (Dice, IoU) if you have masks
-5. Use predictions for downstream analysis
-
----
-
-## Support Checklist
-
-Before asking for help:
-- [ ] All paths are correct and files exist
-- [ ] Required packages are installed
-- [ ] Model checkpoint file is not corrupted
-- [ ] Images are in supported formats
-- [ ] GPU/CUDA setup is correct (if using GPU)
-- [ ] Output directory has write permissions
-
----
 
 ## Quick Configuration Template
 
